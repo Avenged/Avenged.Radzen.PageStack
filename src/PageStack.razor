@@ -1,0 +1,27 @@
+﻿@using Microsoft.Extensions.Logging
+@using System.Reflection
+@using Microsoft.JSInterop
+
+@implements IAsyncDisposable
+
+@inject IServiceProvider SP
+@inject NavigationManager NM
+@inject IJSRuntime JS
+
+<CascadingValue Value="this" IsFixed="true">
+    @{
+        int i = _pages.Count;
+    }
+    @foreach (PageStackPage pagei in _pages)
+    {
+        <div @key=@pagei.UniqueID
+             id=@pagei.UniqueID
+             style=@($"z-index:{i--}")
+             class=@($"rz-body avgd-page-stack {AnimationClass}".Trim())>
+            <DynamicComponent Type=@pagei.Type Parameters=@pagei.Parameters />
+        </div>
+    }
+    <div class="rz-body avgd-page-stack">
+        @ChildContent
+    </div>
+</CascadingValue>

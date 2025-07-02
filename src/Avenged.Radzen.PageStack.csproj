@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>Avenged.Radzen.PageStack</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Avenged</Authors>
+		<Description>Razor components for stacking views as an alternative to traditional navigation in Blazor applications.</Description>
+		<Title>Page Stack Navigation</Title>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageTags>blazor, components, view-stack, razor-components, navigation, page-stack, ui, modal, layered-navigation, openmode, blazor-library, dotnet, .net</PackageTags>
+		<PackageProjectUrl>https://github.com/Avenged/Avenged.Radzen.PageStack</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Avenged/Avenged.Radzen.PageStack</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright (c) 2025 Avenged</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avenged.Radzen.Abstractions" Version="1.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.36" />
+		<PackageReference Include="Radzen.Blazor" Version="3.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+﻿<h3>Component</h3>
+
+<RadzenButton Text="Close page" Click="@(() => PageStack.Pop())" />
+
+@code {
+    [CascadingParameter]
+    public PageStack PageStack { get; set; } = null!;
+}
